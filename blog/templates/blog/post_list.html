@@ -7,14 +7,13 @@
         <h1>New story telling</h1>
     </div>
     <div>
-        <p>published: 06.03.2016, 16:57</p>
-        <h2><a href="">My first post</a></h2>
-        <p>Veni Vidi Vici !!!</p>
-    </div>
-    <div>
-        <p>published: 06.03.2016, 16:58</p>
-        <h2><a href="">My sevond post</a></h2>
-        <p>Bla Bla Bla !!!</p>
+      {% for post in posts %}
+      <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+      </div>
+      {% endfor %}
     </div>
     <p>Hi there!</p>
     <p>It works!</p>
